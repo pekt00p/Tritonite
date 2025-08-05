@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DeepROV - Учебный подводный дрон</title>
+    <title>TritoniteROV - Учебный подводный дрон</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -45,9 +45,16 @@
             display: none;
         }
         .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1560279966-06b1d426d9d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1920x1080/?scuba,diving,underwater,ocean,rov');
             background-size: cover;
             background-position: center;
+            animation: changeBackground 20s infinite;
+        }
+        
+        @keyframes changeBackground {
+            0% { background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1920x1080/?scuba,diving'); }
+            33% { background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1920x1080/?underwater,ocean'); }
+            66% { background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1920x1080/?rov,submarine'); }
         }
         @media (max-width: 768px) {
             .language-switcher {
@@ -68,7 +75,7 @@
     <nav class="bg-white shadow-md fixed w-full z-50">
         <div class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
-                <a href="#" class="text-2xl font-bold text-blue-600">DeepROV</a>
+                <a href="#" class="text-2xl font-bold text-blue-600">TritoniteROV</a>
                 <div class="hidden md:flex space-x-8">
                     <a href="#about" class="nav-link text-gray-700 hover:text-blue-600" data-ru="О проекте" data-en="About">О проекте</a>
                     <a href="#features" class="nav-link text-gray-700 hover:text-blue-600" data-ru="Особенности" data-en="Features">Особенности</a>
@@ -92,13 +99,26 @@
 
     <!-- Hero Section -->
     <header class="hero-bg text-white pt-32 pb-20 section" id="home">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4" data-ru="DeepROV - Учебный подводный дрон" data-en="DeepROV - Educational Underwater Drone">DeepROV - Учебный подводный дрон</h1>
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="max-w-3xl md:w-1/2 md:pr-8">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4" data-ru="TritoniteROV - Учебный подводный дрон" data-en="TritoniteROV - Educational Underwater Drone">TritoniteROV - Учебный подводный дрон</h1>
                 <p class="text-xl md:text-2xl mb-8" data-ru="Инновационный проект для обучения и реальных подводных исследований" data-en="Innovative project for education and real underwater exploration">Инновационный проект для обучения и реальных подводных исследований</p>
                 <a href="#about" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium inline-block transition duration-300" data-ru="Узнать больше" data-en="Learn more">Узнать больше</a>
             </div>
+            <div class="md:w-1/2 mt-8 md:mt-0">
+                <img src="https://cdn-icons-png.flaticon.com/512/3273/3273755.png" 
+                     alt="TritoniteROV Submarine" 
+                     class="rounded-lg  w-full max-w-md mx-auto hover:scale-105 transition-transform duration-500 animate-float"
+                     style="animation: float 6s ease-in-out infinite">
+            </div>
         </div>
+        <style>
+            @keyframes float {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-15px); }
+                100% { transform: translateY(0px); }
+            }
+        </style>
     </header>
 
     <!-- About Section -->
@@ -110,7 +130,7 @@
                     <img src="https://images.unsplash.com/photo-1581093196278-46b5ba6acf3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Underwater ROV" class="rounded-lg shadow-xl w-full">
                 </div>
                 <div class="md:w-1/2">
-                    <h3 class="text-2xl font-bold mb-4" data-ru="DeepROV - это инновационный учебный проект" data-en="DeepROV is an innovative educational project">DeepROV - это инновационный учебный проект</h3>
+                    <h3 class="text-2xl font-bold mb-4" data-ru="TritoniteROV - это инновационный учебный проект" data-en="TritoniteROV is an innovative educational project">TritoniteROV - это инновационный учебный проект</h3>
                     <p class="text-gray-600 mb-4" data-ru="Наш подводный дрон разработан специально для обучения студентов и исследователей основам подводной робототехники, одновременно предоставляя функциональность для решения реальных задач." data-en="Our underwater drone is specifically designed to teach students and researchers the basics of underwater robotics while providing functionality for real-world applications.">Наш подводный дрон разработан специально для обучения студентов и исследователей основам подводной робототехники, одновременно предоставляя функциональность для решения реальных задач.</p>
                     <p class="text-gray-600 mb-4" data-ru="Проект сочетает в себе доступность для начинающих и профессиональные возможности, что делает его идеальным инструментом для образовательных учреждений и исследовательских групп." data-en="The project combines accessibility for beginners with professional capabilities, making it an ideal tool for educational institutions and research groups.">Проект сочетает в себе доступность для начинающих и профессиональные возможности, что делает его идеальным инструментом для образовательных учреждений и исследовательских групп.</p>
                     <div class="flex flex-wrap gap-4 mt-6">
@@ -167,7 +187,15 @@
                         <i class="fas fa-code"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3" data-ru="Открытое ПО" data-en="Open Software">Открытое ПО</h3>
-                    <p class="text-gray-600" data-ru="Полностью открытый исходный код для обучения программированию и адаптации под конкретные задачи. Интеграция с <a href='https://github.com/OpenIPC' target='_blank' class='text-blue-600 hover:underline'>OpenIPC</a> и <a href='https://github.com/bluerobotics/BlueOS' target='_blank' class='text-blue-600 hover:underline'>BlueOS</a>." data-en="Fully open source for programming education and customization for specific tasks. Integration with <a href='https://github.com/OpenIPC' target='_blank' class='text-blue-600 hover:underline'>OpenIPC</a> and <a href='https://github.com/bluerobotics/BlueOS' target='_blank' class='text-blue-600 hover:underline'>BlueOS</a>.">Полностью открытый исходный код для обучения программированию и адаптации под конкретные задачи. Интеграция с <a href='https://github.com/OpenIPC' target='_blank' class='text-blue-600 hover:underline'>OpenIPC</a> и <a href='https://github.com/bluerobotics/BlueOS' target='_blank' class='text-blue-600 hover:underline'>BlueOS</a>.</p>
+                    <p class="text-gray-600 mb-4" data-ru="Полностью открытый исходный код для обучения программированию и адаптации под конкретные задачи. Интеграция с <a href='https://github.com/OpenIPC' target='_blank' class='text-blue-600 hover:underline'>OpenIPC</a> и <a href='https://github.com/bluerobotics/BlueOS' target='_blank' class='text-blue-600 hover:underline'>BlueOS</a>." data-en="Fully open source for programming education and customization for specific tasks. Integration with <a href='https://github.com/OpenIPC' target='_blank' class='text-blue-600 hover:underline'>OpenIPC</a> and <a href='https://github.com/bluerobotics/BlueOS' target='_blank' class='text-blue-600 hover:underline'>BlueOS</a>.">Полностью открытый исходный код для обучения программированию и адаптации под конкретные задачи. Интеграция с <a href='https://github.com/OpenIPC' target='_blank' class='text-blue-600 hover:underline'>OpenIPC</a> и <a href='https://github.com/bluerobotics/BlueOS' target='_blank' class='text-blue-600 hover:underline'>BlueOS</a>.</p>
+                    <ul class="text-gray-600 list-disc pl-5 space-y-1">
+                        <li data-ru="Прозрачность и безопасность кода" data-en="Code transparency and security">Прозрачность и безопасность кода</li>
+                        <li data-ru="Свобода модификации под свои нужды" data-en="Freedom to modify for your needs">Свобода модификации под свои нужды</li>
+                        <li data-ru="Активное сообщество разработчиков" data-en="Active developer community">Активное сообщество разработчиков</li>
+                        <li data-ru="Отсутствие лицензионных ограничений" data-en="No licensing restrictions">Отсутствие лицензионных ограничений</li>
+                        <li data-ru="Совместимость с другими OSS-решениями" data-en="Compatibility with other OSS solutions">Совместимость с другими OSS-решениями</li>
+                        <li data-ru="Быстрое исправление уязвимостей" data-en="Fast vulnerability fixes">Быстрое исправление уязвимостей</li>
+                    </ul>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
                     <div class="text-blue-500 text-4xl mb-4">
@@ -343,7 +371,7 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between">
                 <div class="mb-6 md:mb-0">
-                    <h3 class="text-2xl font-bold mb-4">DeepROV</h3>
+                    <h3 class="text-2xl font-bold mb-4">TritoniteROV</h3>
                     <p class="max-w-xs" data-ru="Инновационный учебный подводный дрон для образования и исследований." data-en="Innovative educational underwater drone for education and research.">Инновационный учебный подводный дрон для образования и исследований.</p>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
